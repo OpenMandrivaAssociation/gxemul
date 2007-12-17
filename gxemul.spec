@@ -10,7 +10,6 @@ Group:		Emulators
 Summary:	Instruction-level machine emulator
 URL:		http://gavare.se/gxemul
 Source0:	%{name}-%{version}.tar.bz2
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 %if %{mdkversion} < 200700
 BuildRequires:	X11-devel
 %else
