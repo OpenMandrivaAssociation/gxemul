@@ -1,5 +1,5 @@
 %define name	gxemul
-%define version	0.4.5.1
+%define version	0.4.6.2
 %define release	%mkrel 1
 
 Name:		%{name}
@@ -9,7 +9,7 @@ License:	BSD
 Group:		Emulators
 Summary:	Instruction-level machine emulator
 URL:		http://gavare.se/gxemul
-Source0:	%{name}-%{version}.tar.bz2
+Source0:	http://gavare.se/gxemul/src/%name-%version.tar.gz
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 %if %{mdkversion} < 200700
 BuildRequires:	X11-devel
@@ -49,6 +49,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(-,root,root)
-%doc LICENSE HISTORY RELEASE README doc/* demos/
+%doc LICENSE HISTORY README doc/* demos/
 %{_bindir}/gxemul
 %{_mandir}/man1/gxemul.*
