@@ -1,6 +1,6 @@
 %define name	gxemul
 %define version	0.4.6.3
-%define release	%mkrel 1
+%define release	%mkrel 3
 
 Name:		%{name}
 Version:	%{version}
