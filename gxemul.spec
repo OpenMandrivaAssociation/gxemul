@@ -1,21 +1,13 @@
-%define name	gxemul
-%define version	0.4.6.3
-%define release	%mkrel 3
-
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
+Name:		gxemul
+Version:	0.4.7.1
+Release:	%mkrel 1
 License:	BSD
 Group:		Emulators
 Summary:	Instruction-level machine emulator
-URL:		http://gavare.se/gxemul
-Source0:	http://gavare.se/gxemul/src/%name-%version.tar.gz
+URL:		http://gavare.se/gxemul/
+Source0:	http://gavare.se/gxemul/src/%{name}-%{version}.tar.gz
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-%if %{mdkversion} < 200700
-BuildRequires:	X11-devel
-%else
 BuildRequires:	libx11-devel
-%endif
 
 %description
 GXemul is an experimental instruction-level machine emulator. Several
@@ -31,24 +23,21 @@ Currently supported processors include ARM, MIPS, PowerPC, and SuperH.
 
 %build
 # inlining should help for this kind of emulation project
-export CFLAGS="$RPM_OPT_FLAGS -finline-functions"
+export CFLAGS="%{optflags} -finline-functions -O3"
 ./configure
 %make
 
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
-mkdir -p $RPM_BUILD_ROOT%{_bindir}
-install -m755 gxemul $RPM_BUILD_ROOT%{_bindir}
-
-mkdir -p $RPM_BUILD_ROOT%{_mandir}/man1
-install -m644 man/gxemul.1 $RPM_BUILD_ROOT%{_mandir}/man1
+install -m755 gxemul -D %{buildroot}%{_bindir}/gxemul
+install -m644 man/gxemul.1 -D %{buildroot}%{_mandir}/man1/gxemul.1
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
 %doc LICENSE HISTORY README doc/* demos/
 %{_bindir}/gxemul
-%{_mandir}/man1/gxemul.*
+%{_mandir}/man1/gxemul.1*
