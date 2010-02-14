@@ -1,6 +1,6 @@
 Name:		gxemul
-Version:	0.4.7.1
-Release:	%mkrel 2
+Version:	0.6.0
+Release:	%mkrel 1
 License:	BSD
 Group:		Emulators
 Summary:	Instruction-level machine emulator
@@ -29,7 +29,6 @@ export CFLAGS="%{optflags} -finline-functions -O3"
 
 %install
 rm -rf %{buildroot}
-
 install -m755 gxemul -D %{buildroot}%{_bindir}/gxemul
 install -m644 man/gxemul.1 -D %{buildroot}%{_mandir}/man1/gxemul.1
 
