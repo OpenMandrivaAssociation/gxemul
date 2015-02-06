@@ -1,6 +1,6 @@
 Name:		gxemul
 Version:	0.6.0
-Release:	%mkrel 2
+Release:	3
 License:	BSD
 Group:		Emulators
 Summary:	Instruction-level machine emulator
