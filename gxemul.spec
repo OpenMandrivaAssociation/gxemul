@@ -1,6 +1,6 @@
 Name:		gxemul
-Version:	0.6.0
-Release:	3
+Version:	0.6.2
+Release:	1
 License:	BSD
 Group:		Emulators
 Summary:	Instruction-level machine emulator
