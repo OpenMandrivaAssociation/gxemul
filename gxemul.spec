@@ -4,7 +4,7 @@ Release:	1
 License:	BSD
 Group:		Emulators
 Summary:	Instruction-level machine emulator
-URL:		http://gavare.se/gxemul/
+URL:		https://gavare.se/gxemul/
 Source0:	http://gavare.se/gxemul/src/%{name}-%{version}.tar.gz
 patch0:		gxemul-0.6.0.cstdlib.patch
 BuildRequires:	pkgconfig(x11)
